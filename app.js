@@ -1,106 +1,107 @@
-const video = document.querySelector(`.video`)
-const video_container = document.querySelector(`.video_container`)
-const words = document.querySelector(`.words`)
-const controls = document.querySelector(`.controls`)
-const btns = controls.querySelectorAll(`.icon`)
-const left = document.querySelector(`.left`)
-const right = document.querySelector(`.right`)
-const link_btn = document.querySelector(`.started`)
-const close_btn = document.querySelector(`.close`)
-let bubble = document.querySelector(`.bubble`)
+const video_ = document.querySelector(`.video_`)
+const video_container_ = document.querySelector(`.video_container_`)
+const words_ = document.querySelector(`.words_`)
+const controls_ = document.querySelector(`.controls_`)
+const btns_ = controls_.querySelectorAll(`.icon_`)
+const left_ = document.querySelector(`.left_`)
+const right_ = document.querySelector(`.right_`)
+const link_btn_ = document.querySelector(`.started_`)
+const close_btn_ = document.querySelector(`.close_`)
+const bubble_ = document.querySelector(`.bubble_`)
 
-video.muted = true
+video_.muted = true
 
-left.classList.add(`none`)
-right.classList.add(`none`)
-video.addEventListener(`click`,()=>{
-    hide()
-    control()
-    video.muted = false
-    refresh()
+left_.classList.add(`none_`)
+right_.classList.add(`none_`)
+video_.addEventListener(`click`,()=>{
+    hide_()
+    control_()
+    video_.muted = false
+    refresh_()
 })
 
-close_btn.addEventListener(`click`,()=>{
-    bubble.classList.add(`none`)
+close_btn_.addEventListener(`click`,()=>{
+    bubble_.classList.add(`none_`)
 })
-function hide (){
+function hide_ (){
     //removes the cliph path
-    video.classList.remove(`video`)
-    video.classList.add(`open`)
+    video_.classList.remove(`video_`)
+    video_.classList.add(`open_`)
     //remove position down
-    video_container.classList.remove(`down`)
+    video_container_.classList.remove(`down_`)
     //remove grid
-    video_container.classList.remove(`divide`)
+    video_container_.classList.remove(`divide_`)
     //show controls
-    controls.classList.remove(`none`)
-    link_btn.classList.remove(`none`)
+    controls_.classList.remove(`none_`)
+    link_btn_.classList.remove(`none_`)
     //hide prompt
-    words.classList.add(`hide`)
-    left.classList.remove(`none`)
-    right.classList.remove(`none`)
+    words_.classList.add(`hide_`)
+    left_.classList.remove(`none_`)
+    right_.classList.remove(`none_`)
     //close btn
-    close_btn.classList.add(`none`)
+    close_btn_.classList.add(`none_`)
 }
-function close(){
+function close_(){
      //removes the cliph path
-    video.classList.add(`video`)
-    video.classList.remove(`open`)
+    video_.classList.add(`video_`)
+    video_.classList.remove(`open_`)
    //add position down
-    video_container.classList.add(`down`)
+    video_container_.classList.add(`down_`)
     //add grid
-    video_container.classList.add(`divide`)
+    video_container_.classList.add(`divide_`)
     //close controls
-    controls.classList.add(`none`)
-    left.classList.add(`none`)
-    right.classList.add(`none`)
+    controls_.classList.add(`none_`)
+    left_.classList.add(`none_`)
+    right_.classList.add(`none_`)
     //hide prompt
-    words.classList.remove(`hide`)
-    link_btn.classList.add(`none`)
+    words_.classList.remove(`hide_`)
+    link_btn_.classList.add(`none_`)
      //close btn
-    close_btn.classList.remove(`none`)
+    close_btn_.classList.remove(`none_`)
+  
   
 }
-function refresh (){
-    video.currentTime = 0
-    video.play()
+function refresh_ (){
+    video_.currentTime = 0
+    video_.play()
     
 }
 
-function control(){
-    btns.forEach((btn)=>{
+function control_(){
+    btns_.forEach((btn_)=>{
         
-        btn.addEventListener(`click`,(e)=>{
-            let id = e.target.id
+        btn_.addEventListener(`click`,(e)=>{
+            let id_ = e.target.id
             
-            if(id==`close`){
-               close()
-               video.muted = true
+            if(id_==`close_`){
+               close_()
+               video_.muted = true
             }
-            if(id==`pause`){
-               video.pause()
-                document.getElementById(`play`).classList.remove(`none`)
-                document.getElementById(`pause`).classList.add(`none`)
+            if(id_==`pause_`){
+               video_.pause()
+                document.getElementById(`play_`).classList.remove(`none_`)
+                document.getElementById(`pause_`).classList.add(`none_`)
             }
-            if(id==`play`){
-                video.play()
-                document.getElementById(`play`).classList.add(`none`)
-                document.getElementById(`pause`).classList.remove(`none`)
+            if(id_==`play_`){
+                video_.play()
+                document.getElementById(`play_`).classList.add(`none_`)
+                document.getElementById(`pause_`).classList.remove(`none_`)
             }
-            if(id==`refresh`){
+            if(id_==`refresh_`){
                 
-               refresh()
+               refresh_()
             }
-            if(id==`volume`){
+            if(id_==`volume_`){
                 
-               video.muted = true
-               document.getElementById(`volume`).classList.add(`none`)
-               document.getElementById(`mute`).classList.remove(`none`)
+               video_.muted = true
+               document.getElementById(`volume_`).classList.add(`none_`)
+               document.getElementById(`mute_`).classList.remove(`none_`)
             }
-            if(id==`mute`){
+            if(id_==`mute_`){
                 
-               video.muted = false
-               document.getElementById(`mute`).classList.add(`none`)
-               document.getElementById(`volume`).classList.remove(`none`)
+               video_.muted = false
+               document.getElementById(`mute_`).classList.add(`none_`)
+               document.getElementById(`volume_`).classList.remove(`none_`)
             }
         })
     })

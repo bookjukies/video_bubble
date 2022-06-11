@@ -1,30 +1,39 @@
 
-.hide {
+.hide_ {
     visibility: hidden;
 }
 
-.none {
+.none_ {
     display: none;
 }
 
-.open{
-    width: 100vw;
-    height: fit-content;
-}
+
+
 /* media for mobile (mobile first approach) */
-@media (max-width:480px){ 
-    .bubble {
+@media (max-width: 480px){ 
+    .open_ {
+            width: 100vw;
+            height: fit-content;
+        }
+    .bubble_ {
+            position: fixed;
             width: 100%;
+            height: 100%;
             overflow-x: hidden;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0);
+            top: 0;
+            left: 0;
+            z-index: 200000;
+    
         }
-    .down{
+    .down_{
       position: fixed;
       top: 60vh;
     } 
-    .divide{
+    .divide_{
         display: grid;
         grid-template-columns: 4fr 2fr;
         grid-template-areas:
@@ -32,25 +41,22 @@
                 "gama video"
                 "btn btn";
     }
-    .controls{
+    .controls_{
         grid-area: control;
         display: flex;
         position: fixed;
         justify-content: space-between;
         z-index: 10;
     }
-    .controls .icon{
+    .controls_ .icon_{
         width: 1.5rem;
         background-color: rgba(0, 0, 0, 0.142);
         margin: 2vh 7vw;
         padding: 1px;
         border-radius: 2rem;
     }
-  
-    .right,.left{
-        
-    }
-    .video {
+
+    .video_ {
         width: 140px;
         width: 140px;
         clip-path: circle(12% at 50% 50%);
@@ -60,7 +66,7 @@
         z-index: 5;
     }
    
-    .words{
+    .words_{
         width: max-content;
         grid-area: gama;
         display: flex;
@@ -71,7 +77,7 @@
         padding: 5px 1rem;
         border-radius: 1rem;
     }
-    .started{
+    .started_{
         grid-area: video;
         z-index: 100;
         text-decoration: none;
@@ -84,19 +90,17 @@
         padding: 1rem 0;
 
     }
-    .started span{
+    .started_ span{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .shuffle{
+    .shuffle_{
         width: 1rem;
     }
-   .near{
-    
-   }
-   .close{
+
+   .close_{
        width: 16px;
        height: 16px;
        grid-area: video;
@@ -106,4 +110,127 @@
        top: 70vh;
        left: 70vw;
    }
+ }
+
+
+
+
+/* desktop */
+ @media (min-width: 481px){
+     /* braaking */
+    .open_ {
+            width: 100%;
+            height: fit-content;
+        }
+    .started_ {
+            grid-area: video;
+            z-index: 100;
+            text-decoration: none;
+            color: white;
+            border-radius: 10px;
+            background-color: rgb(0, 72, 255);
+            width: 30vw;
+            text-align: center;
+            margin: 0;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 60vw;
+        
+        }
+        .bubble_ {
+            position: fixed;
+            width: 30vw;
+            height: auto;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0);
+            top: 0;
+            left: 60vw;
+            z-index: 200000;
+    
+        }
+        .controls_ {
+            grid-area: control;
+            display: flex;
+            position: fixed;
+            justify-content: space-between;
+            z-index: 10;
+        }
+    
+        .controls_ .icon_ {
+            width: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.142);
+            margin: 2vh 2.5vw;
+            padding: 1px;
+            border-radius: 2rem;
+        }
+
+        /* changes */
+    
+        .down_ {
+            position: fixed;
+            top: 60vh;
+        }
+    
+        .divide_ {
+            display: grid;
+            grid-template-columns: 4fr 2fr;
+            grid-template-areas:
+                "control control"
+                "gama video"
+                "btn btn";
+        }
+    
+
+    
+        .video_ {
+            width: 140px;
+            width: 140px;
+            clip-path: circle(20% at 50% 50%);
+            grid-area: video;
+            margin: 0;
+            padding: 0;
+            z-index: 5;
+        }
+    
+        .words_ {
+            width: max-content;
+            grid-area: gama;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            background-color: rgb(0, 72, 255);
+            color: white;
+            padding: 5px 1rem;
+            border-radius: 1rem;
+            margin-left: 7vw;
+        }
+    
+        
+    
+        .started_ span {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .shuffle_ {
+            width: 1rem;
+        }
+    
+        .close_ {
+            width: 16px;
+            height: 16px;
+            grid-area: video;
+            position: fixed;
+            z-index: 20;
+            background-color: rgba(0, 0, 0, 0.15);
+            top: 70vh;
+            left: 83vw;
+        }
+    
  }
