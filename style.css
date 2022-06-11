@@ -1,181 +1,109 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+
+.hide {
+    visibility: hidden;
 }
-.container {
-        width: 100vh;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        background-color: rgba(159, 84, 230, 0);
-        position: fixed;
-        z-index: 100;
+
+.none {
+    display: none;
+}
+
+.open{
+    width: 100vw;
+    height: fit-content;
+}
+/* media for mobile (mobile first approach) */
+@media (max-width:480px){ 
+    .bubble {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    .down{
+      position: fixed;
+      top: 60vh;
+    } 
+    .divide{
+        display: grid;
+        grid-template-columns: 4fr 2fr;
+        grid-template-areas:
+                "control control"
+                "gama video"
+                "btn btn";
     }
-
-.video {
-    width: 400px;
-    height: 400px;
-    clip-path: circle(12% at 50% 50%);
-
-}
-    
-@media (min-width: 800px) {
-
-    .video_container {
+    .controls{
+        grid-area: control;
+        display: flex;
+        position: fixed;
+        justify-content: space-between;
+        z-index: 10;
+    }
+    .controls .icon{
+        width: 1.5rem;
+        background-color: rgba(0, 0, 0, 0.142);
+        margin: 2vh 7vw;
+        padding: 1px;
+        border-radius: 2rem;
+    }
+  
+    .right,.left{
+        
+    }
+    .video {
+        width: 140px;
+        width: 140px;
+        clip-path: circle(12% at 50% 50%);
+        grid-area: video;
+        margin: 0;
+        padding: 0;
+        z-index: 5;
+    }
+   
+    .words{
         width: max-content;
-        background-color: rgba(0, 0, 0, 0);
+        grid-area: gama;
         display: flex;
         justify-content: center;
+        align-self: center;
+        background-color: rgb(0, 72, 255);
+        color: white;
+        padding: 5px 1rem;
+        border-radius: 1rem;
+    }
+    .started{
+        grid-area: video;
+        z-index: 100;
+        text-decoration: none;
+        color: white;
+        border-radius: 10px;
+        background-color: rgb(0, 72, 255);
+        width: 80%;
+        text-align: center;
+        margin: 10% 8% 10% 8%;
+        padding: 1rem 0;
+
+    }
+    .started span{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        position: relative;
     }
-
-    .video_open {
-        width: inherit;
-        height: inherit;
+    .shuffle{
+        width: 1rem;
     }
-
-    .words {
-        width: 10rem;
-        color: white;
-        background-color: rgba(40, 93, 133, 0.797);
-        padding: 5px 10px;
-        position: relative;
-        top: 0;
-        left: 150px;
-        text-align: center;
-        border-radius: 2rem;
-    }
-
-    .hide {
-        visibility: hidden;
-    }
-
-    .none {
-        display: none;
-    }
-
-    .open {
-        width: 300px;
-        height: 800px;
-        position: fixed;
-        top: -10%;
-        left: 70%;
-    }
-
-    .icon {
-        width: 2rem;
-        margin: 0 1rem;
-        background-color: rgba(0, 0, 0, 0.3);
-        border-radius: 1rem;
-        padding: .5rem;
-    }
-
-    .controls {
-        width: max-content;
-        display: flex;
-        flex-direction: row;
-        position: fixed;
-        top: 12%;
-        left: 71%;
-        z-index: 1000;
-
-    }
-
-    .left {
-        display: flex;
-        flex-direction: row;
-
-    }
-
-    .right {
-        display: flex;
-        flex-direction: row;
-    }
-}
-@media (max-width: 480px) {
-    .video_container {
-            width: 600px;
-            height: 600px;
-            background-color: rgba(0, 0, 0, 0);
-            display: flex;
-            position: relative;
-        }
-        .video {
-            width: 400px;
-            height: 400px;
-            clip-path: circle(12% at 50% 50%);
-            position: fixed;
-            left: 20vw;
-            top: 400px;
-            z-index: 102;
-        }
-
-
-    .video_open {
-        width: inherit;
-        height: inherit;
-    }
-
-    .words {
-        margin-top: 100px;
-        width: 10rem;
-        height: fit-content;
-        color: white;
-        background-color: rgba(40, 93, 133, 0.797);
-        padding: 5px 10px;
-        position: fixed;
-        top: 480px;
-        left: 0;
-        text-align: center;
-        border-radius: 2rem;
-        z-index: 102;
-    }
-
-    .hide {
-        visibility: hidden;
-    }
-
-    .none {
-        display: none;
-    }
-
-    .open {
-        width: 300px;
-        height: 800px;
-        position: fixed;
-        top: -50px;
-        left: 0;
-    }
-
-    .icon {
-        width: 2rem;
-        margin: 0 1rem;
-        background-color: rgba(0, 0, 0, 0.3);
-        border-radius: 1rem;
-        padding: .5rem;
-    }
-
-    .controls {
-        width: max-content;
-        display: flex;
-        flex-direction: row;
-        position: fixed;
-        top: 15%;
-        left: 0;
-        z-index: 1000;
-
-    }
-
-    .left {
-        display: flex;
-        flex-direction: row;
-
-    }
-
-    .right {
-        display: flex;
-        flex-direction: row;
-    }
-}
+   .near{
+    
+   }
+   .close{
+       width: 16px;
+       height: 16px;
+       grid-area: video;
+       position: fixed;
+       z-index: 20;
+       background-color: rgba(0, 0, 0, 0.15);
+       top: 70vh;
+       left: 70vw;
+   }
+ }
