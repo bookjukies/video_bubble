@@ -14,6 +14,7 @@
     .open_ {
             width: 100vw;
             height: fit-content;
+            top: 0;
         }
     .bubble_ {
             position: fixed;
